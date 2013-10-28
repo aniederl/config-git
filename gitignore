@@ -1,0 +1,29 @@
+# vim: ft=conf
+
+# TeX/LaTeX/ConTeXt
+*.aux
+*.nav
+*.out
+*.snm
+*.toc
+*.vrb
+*.log
+*.pdf
+*.bbl
+*.blg
+*.tuc
+
+# backup files
+*~
+*.sw?
+
+# generated tags/cscope files
+tags
+tags-ja
+cscope.out
+cscope.files
+types_*.vim
+
+# lock files
+.~lock*#
+

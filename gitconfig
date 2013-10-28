@@ -1,0 +1,105 @@
+# vim: ft=gitconfig
+
+[include]
+	path   = ~/.gitconfig.local
+
+[color]
+	ui     = auto
+	branch = auto
+	status = auto
+	diff   = auto
+	pager  = true
+
+[color "status"]
+	untracked = yellow
+
+[core]
+	pager        = less --QUIT-AT-EOF
+	excludesfile = ~/.gitignore
+
+[branch]
+	autosetupmerge  = true
+#	autosetuprebase = always
+
+[push]
+	default = current
+
+[log]
+	decorate = full
+
+
+[alias]
+# commit
+	c             = commit
+	ca            = commit -a
+
+# add/remove
+	a             = add
+	crm           = rm --cached
+
+# branches
+	co            = checkout
+	b             = branch
+	br            = branch -a
+	sb            = show-branch
+
+# status
+	s             = status
+
+# show
+	ws            = show --color-words
+
+# diff
+	di            = diff HEAD
+	d             = diff
+	cd            = diff --cached
+	wd            = diff --color-words
+	bd            = diff --color-words=.
+
+# log
+	l             = log --decorate
+	ol            = log --decorate --oneline
+	tip           = log --decorate --oneline --no-walk
+	graph         = log --graph \
+                      --pretty=format:"%Cred%h%Creset-%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" \
+                      --abbrev-commit --date=relative
+
+# merging
+	m             = merge
+	re            = rebase
+	cp            = cherry-pick
+
+# remote
+	r             = remote
+	cl            = clone
+	f             = fetch
+	pl            = pull
+	ps            = push
+
+# stashes
+	st            = stash
+	sp            = stash pop
+
+# submodules
+	sm            = submodule
+
+# reset
+	rr            = reset
+	rrh           = reset --hard
+	rrs           = reset --soft
+
+# git-svn
+	sc            = svn clone
+	sf            = svn fetch
+	sr            = svn rebase
+	sd            = svn dcommit
+
+# git-bzr
+	bc            = !sh -c 'git init \"${2}\" && cd \"${2}\" && git bzr add master \"${1}\" && \
+                          git bzr fetch master && git checkout -b master bzr/master' sh
+	ba            = bzr add
+	bzf           = bzr fetch
+	bzp           = bzr push
+	bf            = bzr fetch upstream
+	bp            = bzr push  upstream
+
