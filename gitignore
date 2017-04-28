@@ -12,6 +12,7 @@
 *.bbl
 *.blg
 *.tuc
+*.lbl
 
 # backup files
 *~
@@ -26,4 +27,7 @@ types_*.vim
 
 # lock files
 .~lock*#
+
+# rope
+.ropeproject/
 
